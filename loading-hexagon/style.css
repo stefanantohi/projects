@@ -1,0 +1,213 @@
+:root {
+    --size: 3vw;
+    --color: #ffe36610;
+    --space-between: 4px;
+
+    --ani-time: 4s;
+    --ani-mode: ease-in-out;
+    --ani-delay: 0.125s;
+    --ani-loop: infinite;
+
+    --moveLeftY: calc(-1 * var(--size) - var(--space-between)/2);
+    --moveLeftX: calc(-1 * var(--size)/2 - var(--space-between));
+
+    --moveRightY: calc(-2 * var(--size) - 3 * var(--space-between)/2);
+    --moveRightX: calc(1 * var(--size)/2 + var(--space-between));
+
+    --moveTriRightY: calc(-2 * (var(--size) + var(--space-between)));
+    --moveTriRightX: calc(var(--size) + var(--space-between)*2);
+
+    --moveTriLeftY: calc(2 * var(--moveTriRightY));
+    --moveTriLeftX: calc(-1 * var(--moveTriRightX));
+}
+
+.tri {
+    width: var(--size);
+    height: var(--size);
+    background-color: var(--color);
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+    margin: var(--space-between);
+    position: relative;
+}
+
+.tri.bottom {
+    transform: rotateX(180deg);
+}
+
+.tri.left {
+    transform: translateY(var(--moveLeftY)) translateX(var(--moveLeftX));
+}
+
+.tri.right {
+    transform: translateY(var(--moveRightY)) translateX(var(--moveRightX));
+}
+
+/* -- top-right -- */
+.Stack.top .triStack.left.actuallyRight .tri.right { 
+    animation: lightMe var(--ani-time) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(var(--ani-delay) * var(--i));
+}
+
+.Stack.top .triStack.left.actuallyRight .tri.bottom { 
+    animation: lightMe var(--ani-time) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(var(--ani-delay) * var(--i));
+}
+
+.Stack.top .triStack.left.actuallyRight .tri.top { 
+    animation: lightMe var(--ani-time) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(var(--ani-delay) * var(--i));
+}
+
+.Stack.top .triStack.left.actuallyRight .tri.left { 
+    animation: lightMe var(--ani-time) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(var(--ani-delay) * var(--i));
+}
+
+/* -- top-center -- */
+.Stack.top .triStack.center .tri.right { 
+    animation: lightMe var(--ani-time) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(var(--ani-delay) * var(--i));
+}
+
+.Stack.top .triStack.center .tri.bottom { 
+    animation: lightMe var(--ani-time) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(var(--ani-delay) * var(--i));
+}
+
+.Stack.top .triStack.center .tri.left { 
+    animation: lightMe var(--ani-time) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(var(--ani-delay) * var(--i));
+}
+
+.Stack.top .triStack.center .tri.top { 
+    animation: lightMe var(--ani-time) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(var(--ani-delay) * var(--i));
+}
+
+/* -- top-left -- */
+.Stack.top .triStack.right.actuallyLeft .tri.top { 
+    animation: lightMe var(--ani-time) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(var(--ani-delay) * var(--i));
+}
+
+.Stack.top .triStack.right.actuallyLeft .tri.bottom { 
+    animation: lightMe var(--ani-time) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(var(--ani-delay) * var(--i));
+}
+
+.Stack.top .triStack.right.actuallyLeft .tri.left { 
+    animation: lightMe var(--ani-time) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(var(--ani-delay) * var(--i));
+}
+
+.Stack.top .triStack.right.actuallyLeft .tri.right { 
+    animation: lightMe var(--ani-time) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(var(--ani-delay) * var(--i));
+}
+
+/* -- bottom-left -- */
+.Stack.bottom .triStack.left .tri.top { 
+    animation: lightMe var(--ani-time) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(var(--ani-delay) * var(--i));
+}
+
+.Stack.bottom .triStack.left .tri.bottom { 
+    animation: lightMe var(--ani-time) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(var(--ani-delay) * var(--i));
+}
+
+.Stack.bottom .triStack.left .tri.right { 
+    animation: lightMe var(--ani-time) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(var(--ani-delay) * var(--i));
+}
+
+.Stack.bottom .triStack.left .tri.left { 
+    animation: lightMe var(--ani-time) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(var(--ani-delay) * var(--i));
+}
+
+/* -- bottom-center -- */
+.Stack.bottom .triStack.center .tri.left { 
+    animation: lightMe var(--ani-time) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(var(--ani-delay) * var(--i));
+}
+
+.Stack.bottom .triStack.center .tri.bottom { 
+    animation: lightMe var(--ani-time) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(var(--ani-delay) * var(--i));
+}
+
+.Stack.bottom .triStack.center .tri.right { 
+    animation: lightMe var(--ani-time) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(var(--ani-delay) * var(--i));
+}
+
+.Stack.bottom .triStack.center .tri.top { 
+    animation: lightMe var(--ani-time) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(var(--ani-delay) * var(--i));
+}
+
+/* -- bottom-right -- */
+
+.Stack.bottom .triStack.right .tri.left { /* the first one */
+    animation: lightMe var(--ani-time) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(var(--ani-delay) * var(--i));
+}
+
+.Stack.bottom .triStack.right .tri.right { 
+    animation: lightMe var(--ani-time) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(var(--ani-delay) * var(--i));
+}
+
+.Stack.bottom .triStack.right .tri.bottom { 
+    animation: lightMe var(--ani-time) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(var(--ani-delay) * var(--i));
+}
+
+.Stack.bottom .triStack.right .tri.top { 
+    animation: lightMe var(--ani-time) var(--ani-mode) var(--ani-loop);
+    animation-delay: calc(var(--ani-delay) * var(--i));
+}
+
+
+
+
+/* -- test anime -- */
+
+.tri.right { 
+    animation: spaceLights var(--ani-time) var(--ani-mode) infinite;
+    animation-delay: var(--ani-delay);
+}
+
+.triStack {
+    height: calc(2* var(--size) + var(--space-between));
+}
+
+.triStack.right {
+    transform: translateY(var(--moveTriRightY)) translateX(var(--moveTriRightX)) rotateZ(180deg);
+}
+
+.triStack.left {
+    transform: translateY(var(--moveTriLeftY)) translateX(var(--moveTriLeftX)) rotateZ(180deg);
+}
+
+.Stack {
+    height: calc(2 * var(--size) + var(--space-between)*2);
+}
+
+.Stack.top {
+    transform: rotateZ(180deg);
+    margin-bottom: calc(2 * var(--space-between));
+}
+
+/* @keyframes spaceLights {
+    0%, 100% { background-color: #ffe36610; }
+    25% { background-color: #ffe3663F; }
+    50% { background-color: #ffe3667D; }
+    75% { background-color: #ffe366; }
+} */
+
+@keyframes lightMe {
+    0%, 100% { background-color:#ffe36610; }
+    50% { background-color:#ffe366; }
+}

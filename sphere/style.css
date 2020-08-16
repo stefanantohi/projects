@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --diameter: 5vw;
+    --layer-border-moon: #ffffff;
+    --layer-bg-moon:  #bbbbbb;
+    --layer-border-planet: #ffffff;
+    --layer-bg-planet:  #344277;
+    --border-size: 1px;
+    --layer-opacity: 0.2;
+    --perspective-ratio: 4;
+    --earth-to-moon: calc(var(--diameter)*30);
+}
+
+.orbit {
+    position: relative;
+    height: calc(var(--diameter)*var(--perspective-ratio)); 
+    width: calc(var(--diameter)*var(--perspective-ratio)); 
+    transition: 0.6s ease-in-out;
+    transition-property: border, background;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    animation: orbit 60s linear infinite;
+}
+
+.orbit:hover {
+    border: 1px dotted rgba(255,255,255,1);
+    /* background: rgba(255, 255, 255, 0.1); */
+}
+
+#moon {
+    height: calc(var(--diameter)*0.27);
+    width: calc(var(--diameter)*0.27);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    position: absolute;
+    top: calc(-1 * ((var(--diameter)*0.27)/2));
+    left: calc(-1 * - ((var(--diameter)*0.27)/2));
+    animation: aroundTheWorld 60s linear infinite;
+}
+
+#planet {
+    height: calc(var(--diameter)*1);
+    width: calc(var(--diameter)*1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    position: absolute;
+    top: calc(50% - ((var(--diameter)*1)/2));
+    left: calc(50% - ((var(--diameter)*1)/2));
+    animation: aroundTheWorld 60s linear infinite;
+}
+
+.layerMoon {
+    border: var(--border-size) dotted var(--layer-border-moon);
+    height: calc(var(--diameter)*0.27);
+    width: calc(var(--diameter)*0.27);
+    border-radius: 50%;
+    position: absolute;
+    background-color: var(--layer-bg-moon);
+    opacity: var(--layer-opacity);
+}
+
+.layerPlanet {
+    border: var(--border-size) dotted var(--layer-border-planet);
+    height: calc(var(--diameter)*1);
+    width: calc(var(--diameter)*1);
+    border-radius: 50%;
+    position: absolute;
+    background-color: var(--layer-bg-planet);
+    opacity: var(--layer-opacity);
+    /* box-shadow: 0 0 0 calc(var(--diameter)*0.2) rgba(37,255,11,0.2),
+                0 0 0 calc(var(--diameter)*0.4) rgba(37,255,11,0.2),
+                0 0 0 calc(var(--diameter)*0.6) rgba(37,255,11,0.2),
+                0 0 0 calc(var(--diameter)*0.8) rgba(37,255,11,0.1); */
+}
+
+@keyframes aroundTheWorld {
+    0% { transform: rotateX(23.44) rotateZ(0deg); }
+    100% { transform: rotateX(23.44) rotateZ(360deg); }
+}
+
+@keyframes orbit {
+    0% { transform: rotateX(60deg) rotateZ(0); }
+    100% { transform: rotateX(60deg) rotateZ(360deg); }
+}
+
+@keyframes pulsate {
+    0% {background: black}
+    20% {background: red}
+    40% {background: blue}
+    60% {background: orange}
+    80% {background: green}
+    100% {background: white}
+}
